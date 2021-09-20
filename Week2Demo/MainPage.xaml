@@ -5,28 +5,24 @@
              x:Class="Week2Demo.MainPage"
              BackgroundColor="LightBlue">
 
-    <StackLayout Orientation="Vertical"
+    <StackLayout BindingContext="{x:Reference mySlider}"
+                Orientation="Vertical"
                  BackgroundColor="Beige"
                   HorizontalOptions="Center"
            VerticalOptions="Center">
         <Label x:Name="myLabel"> </Label>
-        <Button Text="Click Me" Clicked="Button_Clicked"></Button>
+       <Button Text="Click Me"
+                Clicked="Button_Clicked"></Button>
 
 
         <Label x:Name="myLabel2"
-               Text="{Binding
-                    Source={x:Reference mySlider},
-                    Path=Value,
+               Text="{Binding Value,
                     StringFormat= 'The value is {0:F2}'
-
                     }"
                ></Label>
 
         <BoxView Color="Aqua"
-                 Opacity="{Binding
-                    Source={x:Reference mySlider},
-                     Path= Value
-            }"
+                 Opacity="{Binding Value}"
                  ></BoxView>
 
         <Slider x:Name="mySlider"
